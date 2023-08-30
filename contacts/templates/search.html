@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{% static 'myfirst.css' %}">
+        <title style="color: white;">Contact List</title>
+<style>
+body{
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAUCo2GR0dSao2nJOqrIEgS7Bs3o5sUsO5ZA&usqp=CAU");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: inherit;
+    font-family:sans-serif;
+}
+.table-container
+{
+    padding:0 10%;
+    margin:40px auto 0;
+}
+.heading 
+{
+    font-size: 40 px;
+    text-align: center;
+    color:#dfc2c2;
+    margin-bottom:40px;
+}
+.table 
+{
+    width:100%;
+    background-color: #3cf443;
+    border-collapse:collapse;
+    border: 1px solid white;
+    
+}
+.table thead 
+{
+    background-color: rgb(86, 86, 138);
+}
+.table thead tr th 
+{
+    font-size:14px;
+    font-weight: 600;
+    letter-spacing:0.35px;
+    color: white;
+    opacity:1;
+    padding:12px;
+    vertical-align:top;
+    border:1px solid white;
+}
+.table tbody tr td 
+{
+    font-size:14 px;
+    Letter-spacing:0.35px;
+    font-weight:normal;
+    background: color #3cf443;;
+    padding:8 px;
+    text-align:center;
+    border:1px solid #000000;
+}
+
+h1 {
+    color: white;
+    padding-left: 30px;
+    padding-top: 30px;
+}
+</style>
+<h1>Contact List:</h1>
+</head>
+<body >
+                                <div class="table-container">
+                                <br>
+                                    <table class="table" id="dataTable" width="100%" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th>First Name</th>
+                                                <th>Last Name</th>
+                                                <th>Email</th>
+                                                <th>Contact Number</th>
+                                            </tr>
+                                        </thead>
+                                    {% for info in Data %}
+                                            <tr>
+                                                <td data-label="Name">{{info.firstname}}</td>
+                                                <td data-label="Name">{{info.lastname}}</td>
+                                                <td data-label="Email">{{info.email}}</td>
+                                                <td data-label="ContactNumber">{{info.contactNumber}}</td>
+                                            </tr>
+                                 
+                                    {% endfor %}
+                                    </tbody>
+                                    </table>
+                                </div>
+</body>
+</html>
